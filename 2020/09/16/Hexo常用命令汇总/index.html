@@ -7,15 +7,15 @@
   
   <title>Hexo常用命令汇总 | 饮鸩止渴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="23岁的小菜雀想要做全栈攻城狮">
+  <meta name="description" content="1、hexo s启动本地服务器，用于预览主题。默认地址： http:&#x2F;&#x2F;localhost:4000&#x2F;  hexo s 是 hexo server 的缩写，命令效果一致； 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；  对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。  2、hexo newhexo new “Hexo常用命令汇总” 新建一篇标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo常用命令汇总">
 <meta property="og:url" content="http://example.com/2020/09/16/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="饮鸩止渴">
-<meta property="og:description" content="23岁的小菜雀想要做全栈攻城狮">
+<meta property="og:description" content="1、hexo s启动本地服务器，用于预览主题。默认地址： http:&#x2F;&#x2F;localhost:4000&#x2F;  hexo s 是 hexo server 的缩写，命令效果一致； 预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；  对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。  2、hexo newhexo new “Hexo常用命令汇总” 新建一篇标">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-16T05:53:38.000Z">
-<meta property="article:modified_time" content="2020-09-16T05:53:38.602Z">
+<meta property="article:modified_time" content="2020-09-16T05:54:01.888Z">
 <meta property="article:author" content="云雀">
 <meta property="article:tag" content="博客 大数据">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="1、hexo-s"><a href="#1、hexo-s" class="headerlink" title="1、hexo s"></a>1、<strong>hexo s</strong></h4><p>启动本地服务器，用于预览主题。默认地址： <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></p>
+<ul>
+<li>hexo s 是 hexo server 的缩写，命令效果一致；</li>
+<li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可； </li>
+<li>对 Hexo 根目录 _config.yml 的修改，需要重启本地服务器后才能预览效果。</li>
+</ul>
+<h4 id="2、hexo-new"><a href="#2、hexo-new" class="headerlink" title="2、hexo new"></a>2、<strong>hexo new</strong></h4><p>hexo new “Hexo常用命令汇总”</p>
+<p>新建一篇标题为 Hexo常用命令汇总 的文章</p>
+<ul>
+<li>文章标题可以在对应 md 文件里改，新建时标题可以写的简单些。</li>
+</ul>
+<h4 id="3、hexo-d"><a href="#3、hexo-d" class="headerlink" title="3、hexo d"></a>3、<strong>hexo d</strong></h4><p>自动生成网站静态文件，并部署到设定的仓库。</p>
+<ul>
+<li>hexo d 是 hexo deploy 的缩写，命令效果一致。</li>
+</ul>
+<h4 id="4、hexo-clean"><a href="#4、hexo-clean" class="headerlink" title="4、hexo clean"></a>4、<strong>hexo clean</strong></h4><p>清除缓存文件 db.json 和已生成的静态文件 public 。</p>
+<ul>
+<li>网站显示异常时可以执行这条命令试试。</li>
+</ul>
+<h4 id="5、hexo-g"><a href="#5、hexo-g" class="headerlink" title="5、hexo g"></a>5、<strong>hexo g</strong></h4><p>生成网站静态文件到默认设置的 public 文件夹。</p>
+<ul>
+<li>便于查看网站生成的静态文件或者手动部署网站；</li>
+<li>如果使用自动部署，不需要先执行该命令；</li>
+<li>hexo g 是 hexo generate 的缩写，命令效果一致。</li>
+</ul>
+<h4 id="6、hexo-new-page"><a href="#6、hexo-new-page" class="headerlink" title="6、hexo new page"></a>6、<strong>hexo new page</strong></h4><p>hexo new page aboutme</p>
+<p>新建一个标题为 aboutme 的页面，默认链接地址为 主页地址/aboutme/</p>
+<ul>
+<li>标题可以为中文，但一般习惯用英文；</li>
+<li>页面标题和文章一样可以随意修改；</li>
+<li>页面不会出现在首页文章列表和归档中，也不支持设置分类和标签。</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -103,9 +135,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2020/09/15/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/15/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">My New Post</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
@@ -143,10 +175,6 @@
         
           <li>
             <a href="/2020/09/16/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB/">Hexo常用命令汇总</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/15/My-New-Post/">My New Post</a>
           </li>
         
           <li>
