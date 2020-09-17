@@ -7,15 +7,15 @@
   
   <title>Hexo本地目录指南 | 饮鸩止渴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我存放Hexo的目录叫myblog，然后来看一下安装好后的目录树： 123456789101112第一层：	.deploy_git	node_modules	public	scaffolds	source	themes		_config.yml	db.json	package.json	package-lock.json">
+  <meta name="description" content="我存放Hexo的目录叫myblog，然后来看一下安装好后的目录树： 123456789101112第一层：	.deploy_git	node_modules	public	scaffolds	source	themes		_config.yml	db.json	package.json	package-lock.json  .deploy_git​    根据hexo d后部署的网站，根据publ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo本地目录指南">
 <meta property="og:url" content="http://example.com/2020/09/16/Hexo%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="饮鸩止渴">
-<meta property="og:description" content="我存放Hexo的目录叫myblog，然后来看一下安装好后的目录树： 123456789101112第一层：	.deploy_git	node_modules	public	scaffolds	source	themes		_config.yml	db.json	package.json	package-lock.json">
+<meta property="og:description" content="我存放Hexo的目录叫myblog，然后来看一下安装好后的目录树： 123456789101112第一层：	.deploy_git	node_modules	public	scaffolds	source	themes		_config.yml	db.json	package.json	package-lock.json  .deploy_git​    根据hexo d后部署的网站，根据publ">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-16T07:02:49.000Z">
-<meta property="article:modified_time" content="2020-09-16T07:11:24.794Z">
+<meta property="article:modified_time" content="2020-09-17T09:50:08.982Z">
 <meta property="article:author" content="云雀">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -91,6 +91,22 @@
       
         <p>我存放Hexo的目录叫myblog，然后来看一下安装好后的目录树：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">第一层：</span><br><span class="line">	.deploy_git</span><br><span class="line">	node_modules</span><br><span class="line">	public</span><br><span class="line">	scaffolds</span><br><span class="line">	source</span><br><span class="line">	themes</span><br><span class="line">	</span><br><span class="line">	_config.yml</span><br><span class="line">	db.json</span><br><span class="line">	package.json</span><br><span class="line">	package-lock.json</span><br></pre></td></tr></table></figure>
+
+<h3 id="deploy-git"><a href="#deploy-git" class="headerlink" title=".deploy_git"></a>.deploy_git</h3><p>​    根据hexo d后部署的网站，根据public修改。</p>
+<h3 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h3><p>​    这个目录用来存放安装过的各类依赖包，新安装的依赖包也会自动存储在这里。</p>
+<h3 id="public"><a href="#public" class="headerlink" title="public"></a>public</h3><p>​    网站目录。当执行过hexo g命令后，将source下的文章等，打包渲染生成html页面，存放在public下。另外css与js文件也存放在这里，归档及标签分类目录也保存在此。</p>
+<h3 id="scaffold"><a href="#scaffold" class="headerlink" title="scaffold"></a>scaffold</h3><p>​    存放各类模板的目录，当你新建文章时，自动按照这里的模板创建空白MD文件。</p>
+<p>​    默认有3类：page（页面）、post（文章）、draft（草稿）</p>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>​    资源目录，主要存放文章、页面、草稿、图片等，可以通过直接在这里修改文章，然后hexo g打包，hexo d部署到服务器。</p>
+<h3 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h3><p>​    就如名字所说，存放主题的目录。</p>
+<p>​    可以去官方给的地址：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 找自己喜欢的主题，或者直接在GitHub上找，一个主题对应一个完整的文件夹，默认主题叫landscape。</p>
+<p>​    对应更换主题时，需要修改配置参数里的themes，名字与文件夹同步。另外修改主题语言是，配置文件中可更换的语言范围根据皮肤主题下的language目录中存放的文件名确定。</p>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config_yml"></a>_config_yml</h3><p>​    配置文件，使用yaml语法，参考：<a target="_blank" rel="noopener" href="https://my.oschina.net/u/1861837/blog/526142%EF%BC%8C%E7%BD%91%E7%AB%99%E7%9A%84%E5%BE%88%E5%A4%9A%E5%85%B3%E9%94%AE%E4%BF%A1%E6%81%AF%E5%8F%8A%E5%8F%82%E6%95%B0%E5%9C%A8%E6%AD%A4%E4%BF%AE%E6%94%B9%E5%AD%98%E5%82%A8%EF%BC%8C%E8%BF%9C%E7%A8%8B%E5%A4%87%E4%BB%BD%E5%BE%88%E9%87%8D%E8%A6%81%E3%80%82%E5%8F%82%E6%95%B0%E5%8F%8A%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%8F%82%E8%80%83%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%EF%BC%9Ahttps://hexo.io/zh-cn/docs/configuration.html%EF%BC%8C%E6%9C%89%E7%AE%80%E4%B8%AD%E7%89%88%E6%9C%AC%EF%BC%8C%E5%BE%88%E5%A5%BD%E6%93%8D%E4%BD%9C%E3%80%82">https://my.oschina.net/u/1861837/blog/526142，网站的很多关键信息及参数在此修改存储，远程备份很重要。参数及配置方法可以参考官方文档：https://hexo.io/zh-cn/docs/configuration.html，有简中版本，很好操作。</a></p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>​    写有Hexo和依赖插件的版本信息</p>
+<p>参考文档</p>
+<p>1、<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000018237272">简单认识Hexo的目录结构</a></p>
+<p>2、<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/setup.html">建站</a></p>
+
       
     </div>
     <footer class="article-footer">
