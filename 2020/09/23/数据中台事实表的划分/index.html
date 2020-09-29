@@ -5,7 +5,7 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 5.1.1"></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2020-09-23T02:21:34.000Z" id="date"> 2020-09-23</time></span><br><span>updated:<time datetime="2020-09-29T08:20:26.915Z" id="updated"> 2020-09-29</time></span></div><h1>数据中台事实表的划分</h1><hr></div><div id="post-content"><p>​    <em>笔者这两日正好在给新公司做数据任务迁移，然后发现，旧平台的任务完全属于烟囱式开发，不太理解为啥这种也会自称是数据中台。然后在迁移结束之后，边了解这一块的业务，边给他做了一下架构设计，这里来聊一下其中事实表的部分</em></p>
+}</style><meta name="generator" content="Hexo 5.1.1"></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2020-09-23T02:21:34.000Z" id="date"> 2020-09-23</time></span><br><span>updated:<time datetime="2020-09-29T08:24:30.946Z" id="updated"> 2020-09-29</time></span></div><h1>数据中台事实表的划分</h1><hr></div><div id="post-content"><p>​    <em>笔者这两日正好在给新公司做数据任务迁移，然后发现，旧平台的任务完全属于烟囱式开发，不太理解为啥这种也会自称是数据中台。然后在迁移结束之后，边了解这一块的业务，边给他做了一下架构设计，这里来聊一下其中事实表的部分</em></p>
 <h3 id="维度建模（Kimball）"><a href="#维度建模（Kimball）" class="headerlink" title="维度建模（Kimball）"></a>维度建模（Kimball）</h3><p>​    维度建模的特点在于，他是自上而下的，从业务出发，根据事实表和维度表来构建数据仓库，通过用数据冗余来换取查询的效率。是一种以消耗存储来换取计算速度的建模方式。维度描述了度量上下文的5W（who，what，when，where，why）信息，以及这些上下文是如何作用的。</p>
 <p>​    这里提到了事实表和维度表两个概念，那么再小讲一下吧。</p>
 <h4 id="事实表"><a href="#事实表" class="headerlink" title="事实表"></a>事实表</h4><ul>
@@ -61,7 +61,7 @@
 <h4 id="退化维"><a href="#退化维" class="headerlink" title="退化维"></a>退化维</h4><p>​    指父-子关系的事物处理系统中常用到的父编号，例如订单号、出入库记录号、门票号等，此类编号型数据要添加入事实表中，可作为维度键，但除了编号，无其他属性，此时这个维度称为退化维。此类尝尝与其他维度组合，在查询关联时用作关联键</p>
 <h4 id="缓慢变化维"><a href="#缓慢变化维" class="headerlink" title="缓慢变化维"></a>缓慢变化维</h4><p>​    在实际情况下，维度的属性并不是静态的，它会随着时间的流失发生缓慢的变化。<br>​    那么，对于已经冗余在事实表中的维度，处理起来，就需要考虑到维度变化的更新。<br>​    处理方法：</p>
 <pre><code>    1. 直接覆盖重跑的方式，对涉及到的表都要维护，消耗较大
-      2. 对维表先进行覆盖更新，再对事实表以主键进行update操作，对属性进行拉链操作</code></pre>
+    2. 对维表先进行覆盖更新，再对事实表以主键进行update操作，对属性进行拉链操作</code></pre>
 <h4 id="雪花型和支架"><a href="#雪花型和支架" class="headerlink" title="雪花型和支架"></a>雪花型和支架</h4><p>​    通过键连接，将冗余属性都存在单独的表中，维就变成了雪花型。例如：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190815151209798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Jlc2luXzQwNA==,size_16,color_FFFFFF,t_70" alt="雪花型"><br>​    支架：统计属性集合，存在于每个辖区层次，一个辖区的所有客户共享一个相同的属性集合（？）<br>​    个人理解：对于度量，对于同一对象范围内的，需要计算的度量所需属性的集合</p>
 <h4 id="维度属性的特点"><a href="#维度属性的特点" class="headerlink" title="维度属性的特点"></a>维度属性的特点</h4><p>​    冗长、描述性、完整无遗漏、离散取值、质量有保证</p>
