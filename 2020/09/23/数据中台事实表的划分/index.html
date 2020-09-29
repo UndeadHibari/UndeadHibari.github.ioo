@@ -5,7 +5,7 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 5.1.1"></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a><a href="/https://www.baidu.com/">Baidu</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2020-09-23T02:21:34.000Z" id="date"> 2020-09-23</time></span><br><span>updated:<time datetime="2020-09-29T09:05:54.817Z" id="updated"> 2020-09-29</time></span></div><h1>数据中台事实表的划分</h1><hr></div><div id="post-content"><p>​    <em>笔者这两日正好在给新公司做数据任务迁移，然后发现，旧平台的任务完全属于烟囱式开发，不太理解为啥这种也会自称是数据中台。然后在迁移结束之后，边了解这一块的业务，边给他做了一下架构设计，这里来聊一下其中事实表的部分</em></p>
+}</style><meta name="generator" content="Hexo 5.1.1"></head><body><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><div id="post-info"><span>date:<time datetime="2020-09-23T02:21:34.000Z" id="date"> 2020-09-23</time></span><br><span>updated:<time datetime="2020-09-29T09:05:54.817Z" id="updated"> 2020-09-29</time></span></div><h1>数据中台事实表的划分</h1><hr></div><div id="post-content"><p>​    <em>笔者这两日正好在给新公司做数据任务迁移，然后发现，旧平台的任务完全属于烟囱式开发，不太理解为啥这种也会自称是数据中台。然后在迁移结束之后，边了解这一块的业务，边给他做了一下架构设计，这里来聊一下其中事实表的部分</em></p>
 <h3 id="维度建模（Kimball）"><a href="#维度建模（Kimball）" class="headerlink" title="维度建模（Kimball）"></a>维度建模（Kimball）</h3><p>​    维度建模的特点在于，他是自上而下的，从业务出发，根据事实表和维度表来构建数据仓库，通过用数据冗余来换取查询的效率。是一种以消耗存储来换取计算速度的建模方式。维度描述了度量上下文的5W（who，what，when，where，why）信息，以及这些上下文是如何作用的。</p>
 <p>​    这里提到了事实表和维度表两个概念，那么再小讲一下吧。</p>
 <h4 id="事实表"><a href="#事实表" class="headerlink" title="事实表"></a>事实表</h4><ul>
